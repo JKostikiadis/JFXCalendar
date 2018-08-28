@@ -1,4 +1,4 @@
-package gr.jfxcal.controlls;
+package gr.jfxcalendar.controlls;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

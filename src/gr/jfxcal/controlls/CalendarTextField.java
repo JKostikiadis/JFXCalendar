@@ -1,4 +1,4 @@
-package gr.jfxcal.controlls;
+package gr.jfxcalendar.controlls;
 
 import com.jfoenix.controls.JFXTextField;
 

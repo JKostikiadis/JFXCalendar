@@ -1,0 +1,207 @@
+.root{
+	-fx-background-color : WHITE;
+}
+
+.calendar_label_xl{
+	-fx-font-size : 48px;
+	-fx-padding : 0 0 0 5;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: WHITE;
+}
+
+.circle_buttom{
+	-fx-background-radius : 20.0;
+	-fx-background-color : transparent;
+}
+
+.circle_buttom:hover{
+	-fx-background-color : #F5F5F5;
+}
+
+.circle_buttom .jfx-rippler{
+	 -jfx-rippler-fill: #A5A5A5;
+}
+
+.circle_buttom_sm{
+	-fx-background-radius : 20.0;
+	-fx-background-color : transparent;
+	-fx-font-size : 11.0px;
+}
+
+.circle_buttom_sm .jfx-rippler{
+	 -jfx-rippler-fill: #A5A5A5;
+}
+
+.circle_buttom_sm:hover{
+	-fx-background-color : #F5F5F5;
+}
+
+.calendar_cell_inactive{
+	-fx-background-color : transparent;
+	-fx-font-size : 11.0px;
+	-fx-text-fill : grey; 
+}
+
+.calendar_cell_inactive .jfx-rippler{
+	 -jfx-rippler-fill: #A5A5A5;
+}
+
+.calendar_cell_inactive:hover{
+	-fx-background-color : #F5F5F5;
+}
+
+.calendar_cell_active{
+	-fx-background-color : transparent;
+	-fx-font-size : 11.0px;
+}
+
+.calendar_cell_active .jfx-rippler{
+	 -jfx-rippler-fill: #A5A5A5;
+}
+
+.calendar_cell_active:hover{
+	-fx-background-color : #E0E0E0;
+}
+
+.rectangle_button{
+	-fx-background-color : #E9E9E9;
+	-fx-font-size : 14.0px;
+}
+
+.rectangle_button:hover{
+	-fx-background-color : #EBEBEB;
+}
+
+.flat_button{
+	-fx-font-size : 11.0px;
+	-fx-background-color : transparent;
+}
+
+.flat_button .jfx-rippler{
+	-fx-font-size : 11.0px;
+	-jfx-rippler-fill: white;
+	-fx-background-color : transparent;
+}
+
+.flat_button_md{
+	-fx-font-size : 12.0px;
+	-fx-text-fill : grey;
+	-fx-background-color : transparent;
+}
+
+.flat_button_md .jfx-rippler{
+	-jfx-rippler-fill: white;
+	-fx-background-color : transparent;
+}
+
+.toggle-button:focused {
+   -fx-background-insets: 0.0, 0.0, 1.0, 2.0;
+}
+
+
+.toggle-button:selected:focused {
+   -fx-background-insets: 0.0, 0.0, 1.0, 2.0;
+}
+
+.label_entry_active{
+	-fx-text-fill : black;
+	-fx-font-size : 12.0px;
+}
+
+.label_entry_inactive{
+	-fx-text-fill : grey;
+	-fx-font-size : 12.0px;
+}
+
+.grid {
+    /* 1 pixel border around the top and right of the grid: */
+    -fx-background-color: cell-border-color, cell-color ;
+    -fx-background-insets: 0, 1 1 0 0 ;
+    -fx-padding: 1 ;
+}
+
+.calendar_cell {   
+    -fx-border-color:  #E0E0E0;
+    -fx-background-insets: 0, 0 0 1 1 ;
+}
+
+.grid_empty_cell {   
+    -fx-border-color:  #E0E0E0;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-insets: 0, 0 0 1 1 ;
+}
+
+.event_button{
+	-fx-background-radius : 60.0px;
+	-fx-text-fill : white;
+}
+
+
+
+
+
+#hourPane{
+	-fx-border-color:  #E0E0E0;
+    -fx-border-width: 1 1 1 1;
+}
+
+#calendar_label{
+	-fx-font-size: 24.0px;
+}
+
+.calendar_label_md{
+	-fx-font-size : 16.0px;
+	-fx-text-fill : grey;
+}
+
+#calendar_label_sm{
+	-fx-font-size : 12.0px;
+	-fx-text-fill : #757575;
+}
+
+#dateLabel{
+	-fx-text-fill : #ADADAD;
+	-fx-font-size : 24.0px;
+}
+
+.label_sm{
+	-fx-font-size : 11.0px;
+}
+
+
+#navigation_calendar{
+	-fx-background-color : WHITE;
+	-fx-border-color : #E0E0E0;
+	-fx-border-width : 0.0 0.0 1.0 0.0; 
+}
+
+#eventButton{
+	-fx-background-color  : #0F9D58; 
+	-fx-background-radius : 60.0px;
+}
+
+#eventButton .jfx-rippler{
+ 	-jfx-rippler-fill: #D6EEC7;
+}
+
+#calendaryEntryPane{
+	-fx-border-color : #E0E0E0;
+	-fx-border-width : 0.0 0.0 1.0 1.0; 
+}
+
+#saveButton{
+	-fx-background-color :#4285F4;
+	-fx-text-fill : white;
+	-fx-font-size : 14px;
+}
+
+#noteArea{
+	-fx-font-size : 14px;
+}
+
+
+
+
+

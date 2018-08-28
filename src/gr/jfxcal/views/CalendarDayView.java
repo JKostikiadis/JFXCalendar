@@ -1,4 +1,4 @@
-package gr.jfxcal.views;
+package gr.jfxcalendar.views;
 
 import java.time.LocalDate;
 

@@ -1,11 +1,11 @@
-package gr.jfxcal.views;
+package gr.jfxcalendar.views;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXButton.ButtonType;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import gr.jfxcal.controlls.EventDialog;
+import gr.jfxcalendar.controlls.EventDialog;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Tooltip;
