@@ -1,14 +1,10 @@
 # JFXCalendar
 
-This library contains a simple calendar view and an event manager in order to store and display events. The feel and look of the user interface was inspired from Google Calendar. It is really easy to use and can be integrated to any JavaFX application. 
+This library contains a simple calendar view and an event manager to store and display events. The feel and look of the user interface were inspired by Google Calendar. It is really easy to use and can be integrated into any JavaFX application. 
 
 DayView   |  WeekView | MonthView
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](./preview/Screenshot1.png)  |  ![](./preview/Screenshot2.png) | ![](./preview/Screenshot3.png)
-
-
-![Add new event](./preview/Screenshot4.png)
-
 
 
 #### How to use it?
@@ -57,3 +53,7 @@ event.setYearlyDate(LocalDate.now());
 // refresh the calendar
 calendar.refreshCalendar();
 ```
+
+JFXCalendar allows the user to interact with the events. The user can edit an event ( priority or date ), mark it as completed, or delete it. Of course, the user can add new entries using the UI like :
+
+![Add new event](./preview/Screenshot4.png)
