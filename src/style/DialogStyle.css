@@ -1,0 +1,146 @@
+.root Label{
+	-fx-font-size: 16.0;
+	-fx-font-family: Calibri;
+}
+
+.root{
+	-fx-background-color :WHITE;
+}
+
+.exportButton{
+	-fx-background-color :  #217346;
+	-fx-pref-width:100.0px;
+	-fx-min-height: 35px;
+	-fx-text-fill : WHITE;
+	-fx-font-size: 14.0;
+	-fx-font-family: Calibri;
+}
+
+.addButton{
+	-fx-background-color :  #3A434D;
+	-fx-pref-width:100.0px;
+	-fx-min-height: 35px;
+	-fx-text-fill : WHITE;
+	-fx-font-size: 14.0;
+	-fx-font-family: Calibri;
+}
+
+.removeButton{
+	-fx-background-color :  #BF1E2E;
+	-fx-pref-width:100.0px;
+	
+	-fx-min-height: 35px;
+	-fx-text-fill : WHITE;
+	-fx-font-size: 14.0;
+	-fx-font-family: Calibri;
+}
+
+.actionButton{
+
+	-fx-background-color :  #4862A3;
+	-fx-pref-width: 100.0px;
+	
+	-fx-min-height: 35px;
+	-fx-text-fill : WHITE;
+	-fx-font-size: 14.0;
+	-fx-font-family: Calibri;
+}
+
+.tooltip {
+	-fx-text-fill : WHITE;
+}
+
+.headerLabel{
+	-fx-font-weight : bold;
+	-fx-font-size:16px;
+}
+
+.cardPane{
+	-fx-background-color: transparent;
+	-fx-background-insets: 10;   
+	-fx-background-radius: 10; 
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);	
+}
+
+.table-view:focused {
+  -fx-font-size:16px;
+  -fx-font-family: Calibri;
+}
+
+.table-view Label{
+	-fx-font-size:16px;
+	-fx-font-family:Calibri;
+	-fx-font-weight: normal;
+	-fx-text-fill:black;
+}
+
+.table-view:focused {
+  -fx-background-color: transparent /* or transparent or other preferred color */,-fx-box-border,-fx-control-inner-background;
+  -fx-background-insets: -1.4, 0.0, 1.0;
+  -fx-background-radius: 1.4, 0.0, 0.0;
+  /*....*/
+  -fx-padding: 1.0; /* 0.083333em; */
+}
+
+.event_button{
+	-fx-background-radius : 60.0px;
+	-fx-text-fill : white;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-unit-increment: 10 ;
+    -fx-block-increment: 50 ;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-unit-increment: 5 ;
+    -fx-block-increment: 20 ;
+}
+
+.jfx-layout-heading{
+	-fx-padding : 10px 0px 0px 0px;
+	
+}
+
+.jfx-layout-body{
+	-fx-padding : 0px 25px 5px 25px;
+}
+
+.jfx-layout-actions{
+	-fx-padding : 0px 15px 15px 0px;
+}
+
+.jfx-layout-actions HBox{
+	-fx-padding : 0px 0px 0px 0px;
+}
+
+
+
+.jfx-tab-pane .tab .tab-label {
+   	-fx-font-size: 18.0;
+	-fx-font-family: Calibri;
+	-fx-text-fill : white;
+}
+
+.jfx-tab-pane .tab-header-area .jfx-rippler{
+	-jfx-rippler-fill : #83898F;
+}
+
+.jfx-tab-pane .headers-region {
+    -fx-background-color: #3A434D;
+    -fx-min-height : 100.0px;
+}
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: #3A434D;
+}
+
+.jfx-tab-pane .tab-selected-line { 
+	-fx-background-color: white; 
+	-fx-pref-height: 2.0px;
+}
+
+.jfx-tab-pane .tab:selected .tab-label{
+	-fx-background-color: #676767;	
+}
+
+.jfx-tab-pane .depth-container { -fx-effect: none; }

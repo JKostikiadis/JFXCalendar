@@ -1,11 +1,12 @@
-package gr.jfxcalendar.views;
-
+package views;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXButton.ButtonType;
 
+import controllers.EventDialog;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import gr.jfxcalendar.controlls.EventDialog;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Tooltip;
@@ -14,7 +15,12 @@ import javafx.scene.paint.Paint;
 
 public abstract class CalendarView extends StackPane {
 
-	public CalendarView(StackPane parentPane) {
+	protected JFXCalendar rootParentPane;
+	protected EventDialog addEventDialog;
+	protected BooleanProperty addButtonBooleanProperty = new SimpleBooleanProperty();
+
+	public CalendarView(JFXCalendar parentPane) {
+		rootParentPane = parentPane;
 
 		FontAwesomeIconView addEventIcon = new FontAwesomeIconView(FontAwesomeIcon.PLUS);
 		addEventIcon.setFill(Paint.valueOf("WHITE"));
@@ -27,12 +33,16 @@ public abstract class CalendarView extends StackPane {
 		addEventButton.setButtonType(ButtonType.RAISED);
 		addEventButton.setId("eventButton");
 
-		EventDialog dialog = new EventDialog(parentPane);
+		addEventButton.visibleProperty().bind(addButtonBooleanProperty.not());
+
+		addEventDialog = new EventDialog(parentPane);
 
 		addEventButton.setOnAction(e -> {
-			// TODO : clear dialog like
-			dialog.clear();
-			dialog.show();
+			addEventDialog.clear();
+			addEventDialog.show();
+			addEventDialog.setOnDialogClosed(ex -> {
+				parentPane.refreshCalendar();
+			});
 		});
 
 		StackPane.setAlignment(addEventButton, Pos.BOTTOM_RIGHT);

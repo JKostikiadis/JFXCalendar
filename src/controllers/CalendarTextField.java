@@ -1,4 +1,4 @@
-package gr.jfxcalendar.controlls;
+package controllers;
 
 import com.jfoenix.controls.JFXTextField;
 
@@ -7,6 +7,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.control.Control;
 import javafx.scene.layout.VBox;
 import javafx.stage.Popup;
+import views.NavigationCalendar;
 
 public class CalendarTextField extends JFXTextField {
 	private static final int PICKER_PADDING = 0;
@@ -38,9 +39,12 @@ public class CalendarTextField extends JFXTextField {
 	}
 
 	public void show(Control ownerControl) {
-		Point2D point = ownerControl.localToScene(ownerControl.getWidth() / 2, ownerControl.getHeight());
-		double x = point.getX() + ownerControl.getScene().getX() + ownerControl.getScene().getWindow().getX();
-		double y = point.getY() + ownerControl.getScene().getY() + ownerControl.getScene().getWindow().getY();
+		Point2D point = ownerControl.localToScene(ownerControl.getWidth() / 2,
+				ownerControl.getHeight());
+		double x = point.getX() + ownerControl.getScene().getX()
+				+ ownerControl.getScene().getWindow().getX();
+		double y = point.getY() + ownerControl.getScene().getY()
+				+ ownerControl.getScene().getWindow().getY();
 
 		popup.show(ownerControl, x - getPopoverPointX(), y);
 	}

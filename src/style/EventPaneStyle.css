@@ -1,0 +1,161 @@
+#titleLabel{
+	-fx-text-fill: BLACK ; 
+	-fx-font-size: 16px; 
+	-fx-font-family: Calibri;
+}
+
+#fromLabel{
+	-fx-text-fill: BLACK ; 
+	-fx-font-size: 16px; 
+	-fx-font-family: Calibri;
+}
+
+#titleLabelMini{
+	-fx-text-fill: BLACK ; 
+	-fx-font-size: 14px; 
+	-fx-font-family: Calibri;
+}
+
+#messageLabel{
+	-fx-text-fill: BLACK; 
+	-fx-font-size: 16px; 
+	-fx-font-family: Calibri;
+}
+
+#timeLabel{
+	-fx-text-fill: BLACK; 
+	-fx-font-size: 16px; 
+	-fx-font-family: Calibri;
+}
+
+#priorityLabel{
+	-fx-text-fill:WHITE;
+	-fx-font-size: 14px;
+	-fx-font-family: Calibri;
+}
+
+
+#optionalEvent{
+	-fx-border-color: #4C95CE;
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);						
+	-fx-background-color: white;
+}
+
+#optionalEvent:hover{
+	-fx-border-color: #1C7FCC;
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.5, 0.0, 0.0);						
+	-fx-background-color: white;
+}
+
+#standardEvent{
+	-fx-border-color: #81C457; 
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+	-fx-background-color: white;
+}
+
+
+#standardEvent:hover{
+	-fx-border-color: #81C457; 
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.5, 0.0, 0.0);
+	-fx-background-color: white;
+}
+
+
+
+#importandEvent{
+	-fx-border-color: #F8D566; 
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+	-fx-background-color: white;
+}
+
+
+#importandEvent:hover{
+	-fx-border-color: #F8D566; 
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.5, 0.0, 0.0);
+	-fx-background-color: white;
+}
+
+
+#urgentEvent{
+	-fx-border-color: #E85569; 
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+	-fx-background-color: white;
+}
+
+
+#urgentEvent:hover{
+	-fx-border-color: #E85569; 
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.5, 0.0, 0.0);
+	-fx-background-color: white;
+}
+
+
+#completedEvent{
+	-fx-border-color: #344563; 
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0);
+	-fx-background-color: white;
+}
+
+
+#completedEvent:hover{
+	-fx-border-color: #43597F; 
+	-fx-border-width: 0 0 0 5; 
+	-fx-background-color: WHITE;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.5, 0.0, 0.0);
+	-fx-background-color: white;
+}
+
+
+#optionalPriorityBox{
+	-fx-background-radius: 20; 
+	-fx-background-color : #4C95CE;
+}
+
+#standardPriorityBox{
+	-fx-background-radius: 20; 
+	-fx-background-color : #81C457;
+}
+
+#importantPriorityBox{
+	-fx-background-radius: 20; 
+	-fx-background-color : #F8D566;
+}
+
+#urgentPriorityBox{
+	-fx-background-radius: 20; 
+	-fx-background-color : #E85569;
+}
+
+#CompletedPriorityBox{
+	-fx-background-radius: 20; 
+	-fx-background-color : #344563;
+}
+
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-unit-increment: 10 ;
+    -fx-block-increment: 50 ;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-unit-increment: 5 ;
+    -fx-block-increment: 20 ;
+}

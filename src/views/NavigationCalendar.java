@@ -1,4 +1,4 @@
-package gr.jfxcalendar.controlls;
+package views;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -21,15 +21,14 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
+import model.CalendarEvent;
 
 public class NavigationCalendar extends VBox {
 
+	private static final double BUTTON_SIZE = 29;
 	private final int PREVIOUS = 0;
 	private final int CURRENT = 1;
 	private final int NEXT = 2;
-
-	private final String MONTHS[] = { "January", "February", "March", "April", "May", "June", "July", "August",
-			"September", "October", "November", "December" };
 
 	private TilePane navigationCalendarGrid;
 	private JFXButton selectedCalendarCell;
@@ -44,10 +43,10 @@ public class NavigationCalendar extends VBox {
 	public StringProperty selectedDateProperty = new SimpleStringProperty();
 
 	public NavigationCalendar() {
-		// Calendar pane
 
+		// Calendar pane
 		setId("navigation_calendar");
-		setPadding(new Insets(15, 32, 15, 32));
+		setPadding(new Insets(15, 20, 15, 20));
 
 		// Toolbar pane
 		HBox navigationPane = new HBox(10);
@@ -80,8 +79,10 @@ public class NavigationCalendar extends VBox {
 		Pane emptyPane = new Pane();
 		HBox.setHgrow(emptyPane, Priority.ALWAYS);
 
-		FontAwesomeIconView previousMonthIcon = new FontAwesomeIconView(FontAwesomeIcon.ANGLE_LEFT);
-		FontAwesomeIconView nextMonthIcon = new FontAwesomeIconView(FontAwesomeIcon.ANGLE_RIGHT);
+		FontAwesomeIconView previousMonthIcon = new FontAwesomeIconView(
+				FontAwesomeIcon.ANGLE_LEFT);
+		FontAwesomeIconView nextMonthIcon = new FontAwesomeIconView(
+				FontAwesomeIcon.ANGLE_RIGHT);
 
 		JFXButton prevMonthButton = new JFXButton();
 		JFXButton nextMonthButton = new JFXButton();
@@ -102,12 +103,14 @@ public class NavigationCalendar extends VBox {
 			clearSelection();
 		});
 
-		navigationPane.getChildren().addAll(dateLabel, emptyPane, prevMonthButton, nextMonthButton);
+		navigationPane.getChildren().addAll(dateLabel, emptyPane, prevMonthButton,
+				nextMonthButton);
 	}
 
 	private void createCalendarGrid() {
-		getStylesheets().add(this.getClass().getResource("/resources/styles/CalendarScheduler.css").toExternalForm());
-		
+		getStylesheets().add(this.getClass().getResource("/style/CalendarScheduler.css")
+				.toExternalForm());
+
 		navigationCalendarGrid = new TilePane();
 		navigationCalendarGrid.setTileAlignment(Pos.CENTER);
 		navigationCalendarGrid.setPrefColumns(7);
@@ -115,16 +118,15 @@ public class NavigationCalendar extends VBox {
 
 		refreshCalendar();
 	}
-	
-	
 
 	public void refreshCalendar() {
 		// Remove all the nodes inside the 'calendar'
 		navigationCalendarGrid.getChildren().clear();
 
 		// Add headers (days) and their tooltips
-		String tooltipText[] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
-		String dayText[] = { "S", "M", "T", "W", "T", "F", "S" };
+		String tooltipText[] = CalendarEvent.DAYS_FULL_NAMES;
+		
+		String dayText[] = CalendarEvent.DAYS_NAMES_LETTERS;
 		for (int i = 0; i < 7; i++) {
 			JFXButton dayButton = new JFXButton(dayText[i]);
 			dayButton.setTooltip(new Tooltip(tooltipText[i]));
@@ -138,12 +140,12 @@ public class NavigationCalendar extends VBox {
 		int lenghtOfSelectedMonth = selectedDate.lengthOfMonth();
 		int selectedYear = selectedDate.getYear();
 
-		currentMonthProperty.set(MONTHS[selectedMonthIndex - 1]);
+		currentMonthProperty.set(CalendarEvent.MONTHS[selectedMonthIndex - 1]);
 		currentYearProperty.set(selectedYear);
 		currentDayProperty.set(selectedDate.getDayOfMonth());
 
 		// in order to display the day correctly we need to find
-		// the start of our calendar which is not always starts on sunday
+		// the start of our calendar which is not always starts on Monday
 		// so find the previous month
 		LocalDate prevMonthDate = selectedDate.minusMonths(1);
 		int lenghtOfPrevMonth = prevMonthDate.lengthOfMonth();
@@ -160,16 +162,27 @@ public class NavigationCalendar extends VBox {
 			navigationCalendarGrid.getChildren().add(dayButton);
 		}
 
+		LocalDate currentDate = LocalDate.now();
+		int currentMonth = currentDate.getMonthValue();
+		int currentDay = currentDate.getDayOfMonth();
+
 		// Fill the 'Calendar' with the days of the month
 		for (int i = 1; i <= lenghtOfSelectedMonth; i++) {
 			JFXButton dayButton = createCalendarCell(String.valueOf(i), CURRENT);
+
 			dayButton.getStyleClass().add("calendar_cell_active");
+
 			navigationCalendarGrid.getChildren().add(dayButton);
 
 			if (i == markedCell.get()) {
 				// it was clicked so marked it as selected
-				dayButton.setStyle("-fx-background-color : #4285F4; -fx-text-fill : WHITE");
+				dayButton.setStyle(
+						"-fx-background-color : #4285F4; -fx-text-fill : WHITE");
 				selectedCalendarCell = dayButton;
+			}
+
+			if (selectedMonthIndex == currentMonth && currentDay == i) {
+				dayButton.setId("currentDay");
 			}
 		}
 
@@ -186,15 +199,15 @@ public class NavigationCalendar extends VBox {
 	public void select(int day) {
 		markedCell.set(day);
 	}
-	
+
 	public void setSelectedDate(LocalDate selectedDate) {
 		this.selectedDate = selectedDate;
 	}
-	
+
 	private JFXButton createCalendarCell(String text, int monthIndex) {
 
 		JFXButton button = new JFXButton(text);
-		button.setPrefWidth(28);
+		button.setPrefWidth(BUTTON_SIZE);
 
 		button.setOnAction(e -> {
 			clearSelection();
@@ -214,15 +227,13 @@ public class NavigationCalendar extends VBox {
 				navigateToNext(text);
 				selectedDate = selectedDate.withDayOfMonth(markedCell.get());
 			}
-			
 
-			
 			selectedDateProperty.set(getSelectedDate());
 			// Notify for the change ( We are using a InvalidationListener )
 			// TODO : Change to StringBinding or something in order to use
 			// ChangeListener instead.
 			selectedDateProperty.get();
-	
+
 		});
 
 		return button;
@@ -246,39 +257,30 @@ public class NavigationCalendar extends VBox {
 
 	private int findDayIndex(DayOfWeek dayOfWeek) {
 		switch (dayOfWeek) {
-		case SUNDAY:
-			return 0;
 		case MONDAY:
-			return 1;
+			return 0;
 		case TUESDAY:
-			return 2;
+			return 1;
 		case WEDNESDAY:
-			return 3;
+			return 2;
 		case THURSDAY:
-			return 4;
+			return 3;
 		case FRIDAY:
-			return 5;
+			return 4;
 		case SATURDAY:
+			return 5;
+		case SUNDAY:
 			return 6;
 		}
 		return 0;
 	}
 
 	private void navigateToNext(String text) {
-
-		// Move and refresh the navigation 'calendar' to previous month
 		moveMonthForwardOnNavCalendar();
-
-		// TODO : move the main calendar too.
 	}
 
 	private void navigateToPrevious(String text) {
-
-		// Move and refresh the navigation 'calendar' to previous month
 		moveMonthBackwardOnNavCalendar();
-
-		// TODO : move the main calendar too.
-
 	}
 
 	private void navigateToCurrent(String text) {
@@ -290,10 +292,12 @@ public class NavigationCalendar extends VBox {
 	}
 
 	public String getSelectedDate() {
-		String date = markedCell.get() + " " + MONTHS[selectedDate.getMonthValue()-1].substring(0, 3) + " " + selectedDate.getYear();
+		String date = markedCell.get() + " "
+				+ CalendarEvent.MONTHS[selectedDate.getMonthValue() - 1].substring(0, 3) + " "
+				+ selectedDate.getYear();
 		return date;
 	}
-	
+
 	public LocalDate getLocalDate() {
 		return selectedDate;
 	}

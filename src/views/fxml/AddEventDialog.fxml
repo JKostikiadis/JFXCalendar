@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="485.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddEventDialogController">
+   <children>
+      <JFXTextField fx:id="titleField" prefHeight="34.0" prefWidth="435.0" promptText="Title" style="-fx-prompt-text-fill: #B2B2B2;">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </JFXTextField>
+      <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="435.0" spacing="10.0">
+         <children>
+            <JFXButton fx:id="optionalEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #4C95CE; -fx-background-radius: 15;" text="Optional" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="standardEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #81C457; -fx-background-radius: 15;" text="Normal" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="importantEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #F7C531; -fx-background-radius: 15;" text="Important" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="criticalEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #E85569; -fx-background-radius: 15;" text="Urgent" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <JFXTabPane fx:id="tabPane" prefHeight="341.0" prefWidth="435.0">
+         <tabs>
+            <Tab text="One-off event">
+               <content>
+                  <VBox>
+                     <children>
+                        <HBox prefHeight="48.0" prefWidth="435.0">
+                           <children>
+                              <Label prefHeight="29.0" prefWidth="101.0" text="Date">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="dateField" style="-fx-font-size: 16px; -fx-font-family: Calibri;" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" right="10.0" top="15.0" />
+                           </padding>
+                        </HBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Label prefHeight="29.0" prefWidth="101.0" text="Description">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextArea fx:id="eventNote1" maxHeight="1.7976931348623157E308" prefHeight="95.0" prefWidth="435.0" wrapText="true">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </TextArea>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Recurring event">
+               <content>
+                  <AnchorPane prefHeight="315.0" prefWidth="435.0">
+                     <children>
+                        <VBox layoutX="-1.0" layoutY="2.0" prefHeight="296.0" prefWidth="435.0" spacing="10.0">
+                           <children>
+                              <VBox spacing="15.0">
+                                 <children>
+                                    <VBox prefHeight="46.0" prefWidth="435.0" spacing="10.0">
+                                       <children>
+                                          <JFXRadioButton fx:id="everyWeekRB" text="Every Week">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="periodicToggleGroup" />
+                                             </toggleGroup>
+                                          </JFXRadioButton>
+                                          <HBox spacing="10.0">
+                                             <children>
+                                                <JFXCheckBox fx:id="mondayCB" text="Mo">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </JFXCheckBox>
+                                                <JFXCheckBox fx:id="tuesdayCB" text="Tu">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </JFXCheckBox>
+                                                <JFXCheckBox fx:id="wednesdayCB" text="We">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </JFXCheckBox>
+                                                <JFXCheckBox fx:id="thursdayCB" text="Th">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </JFXCheckBox>
+                                                <JFXCheckBox fx:id="fridayCB" text="Fr">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </JFXCheckBox>
+                                                <JFXCheckBox fx:id="saturdayCB" text="Sa">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </JFXCheckBox>
+                                                <JFXCheckBox fx:id="sundayCB" text="Su">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </JFXCheckBox>
+                                             </children>
+                                             <padding>
+                                                <Insets left="30.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox prefHeight="46.0" prefWidth="435.0" spacing="10.0">
+                                       <children>
+                                          <JFXRadioButton fx:id="everyMonthRB" text="Every Month" toggleGroup="$periodicToggleGroup">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </JFXRadioButton>
+                                          <HBox spacing="10.0">
+                                             <children>
+                                                <JFXCheckBox fx:id="startOfTheMonthCB" text="Start of the month">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </JFXCheckBox>
+                                                <JFXCheckBox fx:id="endOfTheMonthCB" text="End of the month">
+                                                   <font>
+                                                      <Font name="Calibri" size="16.0" />
+                                                   </font>
+                                                </JFXCheckBox>
+                                             </children>
+                                             <padding>
+                                                <Insets left="30.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox prefHeight="46.0" prefWidth="435.0" spacing="10.0">
+                                       <children>
+                                          <JFXRadioButton fx:id="everyYearRB" text="Every Year" toggleGroup="$periodicToggleGroup">
+                                             <font>
+                                                <Font name="Calibri" size="16.0" />
+                                             </font>
+                                          </JFXRadioButton>
+                                          <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                             <padding>
+                                                <Insets left="30.0" />
+                                             </padding>
+                                             <children>
+                                                <DatePicker fx:id="yearlyDatePicker" style="-fx-font-size: 16px; -fx-font-family: Calibri;" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="95.0" prefWidth="424.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Label prefHeight="29.0" prefWidth="101.0" text="Description">
+                                       <font>
+                                          <Font name="Calibri" size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextArea fx:id="eventNote2" maxHeight="1.7976931348623157E308" prefHeight="101.0" prefWidth="425.0" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <font>
+                                          <Font name="Calibri" size="18.0" />
+                                       </font>
+                                    </TextArea>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets top="15.0" />
+                           </padding>
+                        </VBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+   </padding>
+</VBox>
