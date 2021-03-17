@@ -2,9 +2,11 @@
 
 This library contains a simple calendar view and an event manager in order to store and display events. The feel and look of the user interface was inspired from Google Calendar. It is really easy to use and can be integrated to any JavaFX application. 
 
-![DayView](./preview/Screenshot1.png)
-![WeekView](./preview/Screenshot2.png)
-![MonthView](./preview/Screenshot3.png)
+DayView   |  WeekView | MonthView
+:-------------------------:|:-------------------------:|:-------------------------:
+![](./preview/Screenshot1.png)  |  ![](./preview/Screenshot2.png) | ![](./preview/Screenshot3.png)
+
+
 ![Add new event](./preview/Screenshot4.png)
 
 
