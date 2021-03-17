@@ -36,13 +36,13 @@ public class EventDialog extends JFXDialog {
 
 		content.setBody(bodyPane);
 
-		JFXButton canselButton = new JFXButton("Άκυρο");
+		JFXButton canselButton = new JFXButton("cancel");
 		canselButton.getStyleClass().add("removeButton");
 		canselButton.setOnAction(e -> {
 			this.close();
 		});
 
-		JFXButton addButton = new JFXButton("Εισαγωγή");
+		JFXButton addButton = new JFXButton("Add");
 		addButton.getStyleClass().add("addButton");
 		HBox actionButtonPane = new HBox(15);
 		addButton.setOnAction(e -> {

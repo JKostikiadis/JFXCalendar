@@ -48,22 +48,22 @@
             <Label layoutX="5.0" layoutY="152.0" prefHeight="27.0" prefWidth="96.0" style="-fx-font-size: 18px; -fx-text-fill: black;" text="Περιγραφή" />
             <HBox alignment="CENTER_LEFT" layoutX="3.0" layoutY="95.0" prefHeight="37.0" prefWidth="448.0" spacing="10.0">
                <children>
-                  <JFXButton fx:id="optionalEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #4C95CE; -fx-background-radius: 15;" text="Προαιρετικό" textFill="WHITE">
+                  <JFXButton fx:id="optionalEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #4C95CE; -fx-background-radius: 15;" text="Optional" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="standardEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #81C457; -fx-background-radius: 15;" text="Κανονικό" textFill="WHITE">
+                  <JFXButton fx:id="standardEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #81C457; -fx-background-radius: 15;" text="Normal" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="importantEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #F7C531; -fx-background-radius: 15;" text="Σημαντικό" textFill="WHITE">
+                  <JFXButton fx:id="importantEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #F7C531; -fx-background-radius: 15;" text="Important" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="criticalEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #E85569; -fx-background-radius: 15;" text="Επείγον" textFill="WHITE">
+                  <JFXButton fx:id="criticalEventButton" buttonType="RAISED" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #E85569; -fx-background-radius: 15;" text="Urgent" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="14.0" />
                      </font>
@@ -75,12 +75,12 @@
                   <Font name="Calibri" size="16.0" />
                </font>
             </TextArea>
-            <JFXButton fx:id="closeDialogButton" buttonType="RAISED" layoutX="432.0" layoutY="316.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="96.0" style="-fx-background-color: #3A434D;" text="Κλείσιμο" textFill="WHITE">
+            <JFXButton fx:id="closeDialogButton" buttonType="RAISED" layoutX="432.0" layoutY="316.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="96.0" style="-fx-background-color: #3A434D;" text="Close" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="updateEventButton" buttonType="RAISED" layoutX="313.0" layoutY="316.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="96.0" style="-fx-background-color: #4862A3;" text="Ενημερωση" textFill="WHITE">
+            <JFXButton fx:id="updateEventButton" buttonType="RAISED" layoutX="313.0" layoutY="316.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="40.0" prefWidth="96.0" style="-fx-background-color: #4862A3;" text="Update" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
