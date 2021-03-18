@@ -57,3 +57,12 @@ calendar.refreshCalendar();
 JFXCalendar allows the user to interact with the events. The user can edit an event ( priority or date ), mark it as completed, or delete it. Of course, the user can add new entries using the UI like :
 
 ![Add new event](./preview/Screenshot4.png)
+
+
+#### External Libraries
+JFXCalendar is using :
+* ControlsFX : version 8.40.14
+* JFoenix : 8.0.10
+* FontAwesomeIcons : 8.9 
+
+I have tested the code with Java 1.8. This project is kinda old and I haven't tested it with the newest versions for the above.
